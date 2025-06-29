@@ -1,10 +1,10 @@
-// import answerRouter from "./Routes/answerRouter.js";
-// import cors from "cors";
-// import { createAllTables } from "./controller/createAllTables.js";
-// import express from "express";
-// import pool from "./config/databaseConfig.js";
-// import questionRouter from "./Routes/questionRouter.js";
-// import userRouter from "./Routes/userRouter.js";
+import answerRouter from "./Routes/answerRouter.js";
+import cors from "cors";
+import { createAllTables } from "./controller/createAllTables.js";
+import express from "express";
+import pool from "./config/databaseConfig.js";
+import questionRouter from "./Routes/questionRouter.js";
+import userRouter from "./Routes/userRouter.js";
 
 // const app = express();
 // const port = process.env.PORT;
@@ -83,16 +83,21 @@
 // // Start everything
 // startServer();
 
-import answerRouter from "./Routes/answerRouter.js";
-import cors from "cors";
-import { createAllTables } from "./controller/createAllTables.js";
-import express from "express";
-import pool from "./config/databaseConfig.js";
-import questionRouter from "./Routes/questionRouter.js";
-import userRouter from "./Routes/userRouter.js";
+// import answerRouter from "./Routes/answerRouter.js";
+// import cors from "cors";
+// import { createAllTables } from "./controller/createAllTables.js";
+// import express from "express";
+// import pool from "./config/databaseConfig.js";
+// import questionRouter from "./Routes/questionRouter.js";
+// import userRouter from "./Routes/userRouter.js";
 
 const app = express();
 const port = process.env.PORT;
+const corsOptions = {
+  origin: "https://evangadiforum.berhangebre.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+};
 
 // ✅ Middlewares
 app.use(cors());
