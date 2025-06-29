@@ -95,7 +95,15 @@ const app = express();
 const port = process.env.PORT;
 
 // ✅ Middlewares
-app.use(cors());
+const corsOptions = {
+  origin: "https://evangadiforum.berhangebre.com",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
+
 
 // Middleware to parse JSON
 app.use(express.json());
