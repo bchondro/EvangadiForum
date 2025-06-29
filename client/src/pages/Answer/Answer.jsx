@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
+
+import { BsPatchQuestionFill } from "react-icons/bs";
 import axios from '../../utils/axios'
 import classes from './Answer.module.css'
 import { useParams } from 'react-router-dom'
-import { BsPatchQuestionFill } from "react-icons/bs";
-
 
 function Answer() {
     const {qid} =useParams()
     const [answer, setAnswer] = useState([])
     const [question, setQuestion] = useState([])
     const answerRef = useRef('')
-    const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token')
+  const [errorMsg, setErrorMsg] = useState("");
 
     useEffect(()=>{
         (async()=>{
@@ -37,7 +38,7 @@ function Answer() {
         // if(answerValue.length < 5){
         //    return alert('Please enter at least 6 character')
         // }
-        const [errorMsg, setErrorMsg] = useState("");
+       
 
         async function postAnswer(e) {
           e.preventDefault();
