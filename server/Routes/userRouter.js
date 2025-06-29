@@ -1,11 +1,12 @@
-import express from "express";
+import { checkUser, login, register } from "../controller/userController.js";
+
 import authMiddleware from "../middleware/auth.js";
-import { register, login, checkUser } from "../controller/userController.js";
+import express from "express";
 
 const router = express.Router();
 
 //register route
-router.post("/register", register);  //http://localhost:3002/api/auth/register
+router.post("register", register);  //http://localhost:3002/api/auth/register
 
 //login user
 router.post("/login", login);
